@@ -62,6 +62,12 @@ const callMe = () => {
     const label = document.querySelectorAll(".title");
     const warning = document.querySelectorAll(".warning");
 
+    day.length === 0 ? warning[0].innerHTML = "This field is required"
+      : warning[0].innerHTML = "Must be a valid day";
+    month.length === 0 ? warning[1].innerHTML = "This field is required"
+      : warning[1].innerHTML = "Must be a valid month";
+    year.length === 0 ? warning[2].innerHTML = "This field is required"
+      : warning[2].innerHTML = "Must be a valid year";
     if (day < 1 || day > 31) {
       gotError(label, inputBox, warning[0]);
     } else
